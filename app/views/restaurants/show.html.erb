@@ -1,0 +1,20 @@
+<h1>Show one Restaurants</h1>
+
+<ul class="list-unstyled m-4">
+	<li class="fs-4"><%= @restaurant.name %></li>
+	<li><%= @restaurant.address %></li>
+	<li><%= @restaurant.phone_number %></li>
+	<li><%= @restaurant.category %></li>
+
+
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item justify-content-between"><%= review.content %> ***********  <%= review.rating %> star rating</li>
+  <% end %>
+</ul>
+
+	<%= link_to "Back to list", restaurants_path %>
+	<%= link_to "Edit", edit_restaurant_path(@restaurant) %>
+	<%= link_to "Delete restaurant",  restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you sure you want to delete #{@restaurant.name}" } %>
+	<%= link_to "Leave a review",  new_restaurant_review_path(@restaurant) %>
+</ul>
