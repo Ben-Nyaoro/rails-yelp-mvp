@@ -9,12 +9,12 @@
 
 <ul class="list-group">
   <% @restaurant.reviews.each do |review| %>
-    <li class="list-group-item justify-content-between"><%= review.content %> ***********  <%= review.rating %> star rating</li>
+    <li class="list-group-item justify-content-between"><%= review.content %> ***********  <%= review.rating %> star rating ********** <%= link_to "Delete Review",  review_path(review), method: :delete, data: { confirm: "Are you sure you want to delete this review?" } %></li>
   <% end %>
 </ul>
 
 	<%= link_to "Back to list", restaurants_path %>
 	<%= link_to "Edit", edit_restaurant_path(@restaurant) %>
-	<%= link_to "Delete restaurant",  restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you sure you want to delete #{@restaurant.name}" } %>
+	<%= link_to "Delete restaurant",  restaurant_path(@restaurant), method: :delete, data: { confirm: "Are you sure you want to delete #{@restaurant.name}?" } %>
 	<%= link_to "Leave a review",  new_restaurant_review_path(@restaurant) %>
 </ul>
