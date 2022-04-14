@@ -10,7 +10,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body>		
+		<div class ="container">
+				<nav class="nav justify-content-end ">		
+					<li class ="btn btn-outline-primary m-1"> <%= link_to "Add a new Restaurant",  new_restaurant_path %> </li>
+				</nav>
+				<%= yield %>
+		</div>
   </body>
 </html>
