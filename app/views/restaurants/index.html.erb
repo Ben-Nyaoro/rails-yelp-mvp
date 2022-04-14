@@ -1,8 +1,8 @@
-<h1>All Restaurants</h1>
+<h1 class="text-center">All Restaurants</h1> <hr>
 
 <ol class=""> 
 	<% @restaurants.each do |restaurant| %>
-		<li><%= link_to restaurant.name, restaurant_path(restaurant) %> <span>located at </span> <%= restaurant.address %>  phone number <strong><%= restaurant.phone_number %> </strong></li>
+		<li><%= link_to restaurant.name, restaurant_path(restaurant) %> <span>located at </span> <%= restaurant.address %>  phone number <strong><%= restaurant.phone_number %> </strong></li> <br>
 	<% end %>
 </ol>
 
